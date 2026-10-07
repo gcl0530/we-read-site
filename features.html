@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>核心功能 · WE_READ</title>
+<meta name="description" content="WE_READ 核心功能：采集管道、正文存档、AI 批注引擎、决策工作台、本地全文检索与 Web 控制台。">
+<meta name="theme-color" content="#f5f8fc">
+<meta property="og:site_name" content="WE_READ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-size='16' fill='white' text-anchor='middle' font-family='Georgia'%3EW%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳转到正文</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="返回首页">
+      <span class="brand-mark">WE_READ</span><span class="brand-name">公众号数据系统</span>
+    </a>
+    <nav class="primary-nav" aria-label="主导航">
+      <a href="/">首页</a>
+      <a href="/features.html" class="active" aria-current="page">核心功能</a>
+      <a href="/data.html">数据与成果</a>
+      <a href="/about.html">关于</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深浅色" title="切换深浅色">◐</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <section class="section" style="padding-top:56px">
+      <h1 class="section-title">核心功能 <small>CORE FEATURES</small></h1>
+      <p class="section-lead">一条从「数据」到「认知」的本地流水线：自动采集 → 正文存档 → AI 批注 → 每周决策。全部运行在你自己的电脑上，不依赖任何云端服务。</p>
+
+      <div class="feature">
+        <div class="f-num">01 · 采集</div>
+        <div>
+          <h3>公众号数据采集</h3>
+          <p>微信扫码登录后自动抓取关注号的文章列表与阅读数据。支持全量首采与增量更新，断点续爬，内置限速与风控保护，一次更新覆盖全部号。</p>
+          <div class="tags"><span class="tag">扫码登录</span><span class="tag">增量更新</span><span class="tag">断点续爬</span><span class="tag">防风控限速</span></div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="f-num">02 · 存档</div>
+        <div>
+          <h3>正文本地存档</h3>
+          <p>把文章正文抓进本地 SQLite 库，防删除、防设限。配全文倒排索引，标题与正文一起搜，命中即看本地正文，关键词高亮——文章没了也丢不了。</p>
+          <div class="tags"><span class="tag">防删文</span><span class="tag">全文检索</span><span class="tag">关键词高亮</span><span class="tag">阅读进度条</span></div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="f-num">03 · 批注</div>
+        <div>
+          <h3>AI 分周批注引擎</h3>
+          <p>按周给文章生成「速览四段式」与类型化批注：道法（原则）/ 陪伴（情绪样本）/ 术器（可复用工具）/ OPC（客观-判断-结论）。AI 起草、你审改，一键导出笔记式 Markdown。</p>
+          <div class="tags"><span class="tag">分周速览</span><span class="tag">四类标签</span><span class="tag">人工可编辑</span><span class="tag">导出 Markdown</span></div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="f-num">04 · 决策</div>
+        <div>
+          <h3>每周决策工作台</h3>
+          <p>共振信号自动聚合「同周多个号都在说」的主题，标注新增/持续；结合爆款榜、批注认知与号动态，一个页面翻完本周发生了什么。支持周台账与周简报导出。</p>
+          <div class="tags"><span class="tag">共振信号</span><span class="tag">新增/持续标注</span><span class="tag">周台账</span><span class="tag">周简报导出</span></div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="f-num">05 · 控制台</div>
+        <div>
+          <h3>本地 Web 控制台</h3>
+          <p>浏览器即开即用的九页签工作台：文章流按日分组、已读标记；批注按周浏览与编辑；任务页一键触发采集；深浅色主题可切换。数据全程本地，127.0.0.1 只绑本机。</p>
+          <div class="tags"><span class="tag">九页签</span><span class="tag">深浅色主题</span><span class="tag">任务编排</span><span class="tag">本机回环绑定</span></div>
+        </div>
+      </div>
+
+      <figure class="shot" style="margin-top:40px">
+        <img src="/assets/articles.png" alt="WE_READ 文章流：按日分组展示各号文章与阅读数据">
+        <figcaption>文章信息流 · 按日分组 + 阅读/点赞数据 + 本地正文标记</figcaption>
+      </figure>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="brand"><span class="brand-mark">WE_READ</span></span>
+    <span class="meta">公众号数据系统 · 本地运行的个人知识工作台</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于 · WE_READ</title>
+<meta name="description" content="WE_READ 技术栈与隐私：Python + SQLite 本地系统，数据不出门、无云端依赖；采集、批注、决策全流程本地运行。">
+<meta name="theme-color" content="#f5f8fc">
+<meta property="og:site_name" content="WE_READ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-size='16' fill='white' text-anchor='middle' font-family='Georgia'%3EW%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳转到正文</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="返回首页">
+      <span class="brand-mark">WE_READ</span><span class="brand-name">公众号数据系统</span>
+    </a>
+    <nav class="primary-nav" aria-label="主导航">
+      <a href="/">首页</a>
+      <a href="/features.html">核心功能</a>
+      <a href="/data.html">数据与成果</a>
+      <a href="/about.html" class="active" aria-current="page">关于</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深浅色" title="切换深浅色">◐</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <section class="section prose-about" style="padding-top:56px">
+      <h1 class="section-title" style="font-size:30px">关于系统 <small>ABOUT</small></h1>
+      <p class="section-lead">WE_READ 是一套<b>本地运行</b>的公众号数据工作台：把关注的公众号变成可检索、可批注、可回溯的认知系统。它不是云服务，不是 SaaS——数据、代码、运行环境都在你自己的电脑上。</p>
+
+      <h2>技术栈</h2>
+      <div class="stack">
+        <span>Python</span><span>SQLite</span><span>微信读书数据管道</span>
+        <span>本地 Web 控制台</span><span>LLM 批注引擎</span><span>倒排全文检索</span>
+      </div>
+      <p>采集端通过浏览器自动化完成微信扫码登录与文章抓取；数据统一落进本地 SQLite；批注由 LLM 生成「速览 + 类型化批注」后入库，支持人工审改。控制台是只绑本机回环的 Web 界面，浏览器即开即用。</p>
+
+      <h2>隐私与安全</h2>
+      <div class="note">
+        数据全程本地：微信登录态、浏览器会话、文章与批注数据都不出本机，无任何云端回传。控制台仅绑定 127.0.0.1，不对局域网或公网开放。正文存档仅用于个人学习与复盘。
+      </div>
+
+      <h2>为什么这么做</h2>
+      <p>公众号文章是「读时觉得有收获、读完全忘光」的典型。与其靠印象，不如交给系统：采集帮你不错过，存档帮你防删文，批注帮你把每周内容压缩成可复用的认知单元，决策页帮你把零散信息拼成本周发生了什么。</p>
+
+      <h2>关于作者</h2>
+      <p class="note" style="margin-top:8px">（此处预留个人简介——后续补充姓名、身份与联系方式。）</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="brand"><span class="brand-mark">WE_READ</span></span>
+    <span class="meta">公众号数据系统 · 本地运行的个人知识工作台</span>
+  </div>
+</footer>
+</body>
+</html>
