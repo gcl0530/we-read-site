@@ -32,13 +32,14 @@
   <div class="container">
     <section class="section" style="padding-top:56px">
       <h1 class="section-title">数据与成果 <small>DATA &amp; NOTES</small></h1>
-      <p class="section-lead">系统已在本地持续运行：一批财经公众号的文章、阅读数据与 AI 批注被沉淀为可回溯的个人认知库。以下均为真实运行数据（截至 2026-10-07）。</p>
+      <p class="section-lead">系统已在本地持续运行：一批财经公众号的文章、阅读数据与 AI 批注被沉淀为可回溯的个人认知库。以下均为真实运行数据<span id="sync-cap">（自动同步自本地系统）</span>。</p>
 
       <section class="stats" aria-label="运行数据">
-        <div class="stat"><b>13</b><span>个公众号追踪</span></div>
-        <div class="stat"><b>6,414</b><span>篇文章入库</span></div>
-        <div class="stat"><b>153</b><span>篇已完成批注</span></div>
-        <div class="stat"><b>539</b><span>条认知批注</span></div>
+        <div class="stat"><b data-key="bizs">15</b><span>个公众号追踪</span></div>
+        <div class="stat"><b data-key="articles">7,932</b><span>篇文章入库</span></div>
+        <div class="stat"><b data-key="annotated">328</b><span>篇已完成批注</span></div>
+        <div class="stat"><b data-key="note_items">1,092</b><span>条认知批注</span></div>
+        <div class="stat"><b data-key="archived">591</b><span>篇正文本地存档</span></div>
       </section>
 
       <h2 class="section-title" style="font-size:24px;margin-top:48px">四类批注标签 <small>NOTE TAXONOMY</small></h2>
@@ -72,6 +73,18 @@
         <img src="assets/annotate.png" alt="WE_READ 批注页：按周浏览速览与类型化批注，支持人工编辑与导出">
         <figcaption>AI 批注页 · 分周速览 + 道法 / 陪伴 / 术器 / OPC 类型化批注</figcaption>
       </figure>
+
+      <h2 class="section-title" style="font-size:24px;margin-top:56px">最新批注 <small>RECENT NOTES</small></h2>
+      <p class="section-lead">最近两周的真实批注输出——速览四段式 + 类型化批注条，每一条都是把文章压缩成可复用的认知单元。</p>
+      <div id="notes-block" class="notes-block">
+        <p class="section-lead" style="color:var(--ink-4)">正在同步数据…</p>
+      </div>
+
+      <h2 class="section-title" style="font-size:24px;margin-top:56px">道·核心铁律 <small>PRINCIPLES</small></h2>
+      <p class="section-lead">长期有效的判断框架——十二条铁律，指导每一次决策与复盘。</p>
+      <div id="principles-block" class="p-grid">
+        <p class="section-lead" style="color:var(--ink-4)">正在同步数据…</p>
+      </div>
     </section>
   </div>
 </main>
