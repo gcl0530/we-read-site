@@ -237,6 +237,30 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hp-card h3 a:hover { color: var(--accent); }
 .hp-card p { margin: 0; font-size: 13.5px; color: var(--ink-3); line-height: 1.7; }
 
+/* ---------- 关于页:定位宣言 + 过程时间线 ---------- */
+.manifesto {
+  background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: 14px; padding: 22px 24px; margin: 28px 0 40px; box-shadow: var(--shadow-card);
+}
+.manifesto p { margin: 0 0 10px; font-size: 15px; color: var(--ink-2); line-height: 1.9; }
+.manifesto p:last-child { margin-bottom: 0; }
+.timeline { margin: 24px 0 8px; }
+.tl-item {
+  position: relative; padding: 0 0 26px 34px; border-left: 1.5px solid var(--line-strong);
+}
+.tl-item::before {
+  content: ""; position: absolute; left: -5.5px; top: 5px; width: 10px; height: 10px;
+  border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--card);
+}
+.tl-item:last-child { border-left-color: transparent; padding-bottom: 8px; }
+.tl-item b { font-family: var(--font-serif); font-size: 16.5px; display: block; margin-bottom: 4px; }
+.tl-item p { margin: 0; font-size: 14px; color: var(--ink-3); line-height: 1.75; padding-right: 64px; }
+.tl-tag {
+  position: absolute; right: 0; top: 2px; font-size: 11.5px; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 999px; padding: 1px 10px; letter-spacing: 0.5px;
+}
+.tl-item:last-child .tl-tag { color: var(--ink-4); border-color: var(--line-strong); }
+
 /* ---------- 页脚 ---------- */
 .site-footer { border-top: 1px solid var(--line); padding: 28px 0 40px; margin-top: 40px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
