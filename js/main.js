@@ -50,32 +50,56 @@
       if (map[k] != null) els[i].textContent = fmt(map[k]);
     }
   }
-  function renderNotes(notes) {
-    var host = document.getElementById("notes-block");
-    if (!host || !notes || !notes.length) return;
+  function renderPicks(picks) {
+    var host = document.getElementById("picks-block");
+    if (!host || !picks || !picks.length) return;
     var html = "";
-    for (var w = 0; w < notes.length; w++) {
-      var wk = notes[w];
-      html += '<div class="nt-week"><div class="nt-week-head"><b>' + esc(wk.week_start) + "</b><span>" +
-        wk.count + " 篇</span></div>";
-      for (var i = 0; i < wk.items.length; i++) {
-        var a = wk.items[i];
-        html += '<article class="nt-card">' +
-          '<div class="nt-meta">' + esc(a.biz_name) + " · " + tagHtml(a.tag) + "</div>" +
-          '<h4 class="nt-title">' + esc(a.title) + "</h4>";
-        if (a.summary) html += '<p class="nt-summary">' + esc(a.summary) + "</p>";
+    for (var w = 0; w < picks.length; w++) {
+      var wk = picks[w];
+      html += '<div class="nt-week"><div class="nt-week-head"><b>' + esc(wk.week_start) + " 周</b><span>自动精选 Top " +
+        wk.picks.length + " · 按批注质量评分（金句 / 强逻辑 / 新认知含量）</span></div>";
+      for (var i = 0; i < wk.picks.length; i++) {
+        var a = wk.picks[i];
+        var link = a.link ? ' href="' + esc(a.link) + '" target="_blank" rel="noopener"' : "";
+        html += '<article class="nt-card pk-card">' +
+          '<div class="pk-top"><b class="pk-rank">' + String(i + 1).padStart(2, "0") + "</b>" +
+          '<div class="pk-main"><div class="nt-meta">' + esc(a.biz_name) + " · " + tagHtml(a.tag) + "</div>" +
+          '<h4 class="nt-title"><a' + link + ">" + esc(a.title) + "</a></h4></div></div>";
+        if (a.summary) {
+          var sum = a.summary.length > 240 ? a.summary.slice(0, 240) + "…" : a.summary;
+          html += '<p class="nt-summary">' + esc(sum) + "</p>";
+        }
         if (a.notes && a.notes.length) {
-          html += '<ul class="nt-list">';
+          html += '<details class="pk-more"><summary>展开 ' + a.notes.length + " 条批注</summary><ul class=\"nt-list\">";
           for (var j = 0; j < a.notes.length; j++) {
             var n = a.notes[j];
             html += "<li>" + tagHtml(n.type) + '<span class="nt-text">' + esc(n.text) + "</span></li>";
           }
-          html += "</ul>";
+          html += "</ul></details>";
         }
         html += "</article>";
       }
       html += "</div>";
     }
+    host.innerHTML = html;
+    host.classList.add("rendered");
+  }
+  function renderHomePicks(picks) {
+    var host = document.getElementById("home-picks");
+    if (!host || !picks || !picks.length) return;
+    var wk = picks[0];
+    if (!wk || !wk.picks || !wk.picks.length) return;
+    var html = '<p class="section-lead">' + esc(wk.week_start) + " 周自动精选 · 按批注质量评分取 Top 3 — <a href=\"data.html\">全部精选 →</a></p><div class=\"hp-grid\">";
+    var top = Math.min(3, wk.picks.length);
+    for (var i = 0; i < top; i++) {
+      var a = wk.picks[i];
+      var link = a.link ? ' href="' + esc(a.link) + '" target="_blank" rel="noopener"' : "";
+      html += '<article class="hp-card"><div class="nt-meta">' + esc(a.biz_name) + " · " + tagHtml(a.tag) + "</div>" +
+        "<h3><a" + link + ">" + esc(a.title) + "</a></h3>" +
+        (a.summary ? "<p>" + esc(a.summary.slice(0, 120)) + (a.summary.length > 120 ? "…" : "") + "</p>" : "") +
+        "</article>";
+    }
+    html += "</div>";
     host.innerHTML = html;
     host.classList.add("rendered");
   }
@@ -104,7 +128,7 @@
       .then(function (d) {
         if (!d) return;
         if (d.stats) renderStats(d.stats);
-        if (d.recent_notes) renderNotes(d.recent_notes);
+        if (d.weekly_picks) { renderPicks(d.weekly_picks); renderHomePicks(d.weekly_picks); }
         if (d.principles) renderPrinciples(d.principles);
         renderCap(d.generated_at);
       })
